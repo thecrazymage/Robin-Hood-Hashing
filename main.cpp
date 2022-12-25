@@ -61,8 +61,8 @@ public:
 			{
 				if (arr[i]->getDFB() == -1)
 				{
-					arr[i] = cur; 
-					break; 
+					arr[i] = cur;
+					break;
 				}
 
 				if (arr[i]->getDFB() >= cur->getDFB())
@@ -113,7 +113,7 @@ public:
 		int cur_DFB = 0;
 		int FLAG = 0;
 		HashNode* tmp = new HashNode;
-		
+
 		while (arr[hashIndex]->getDFB() >= cur_DFB)
 		{
 			if (arr[hashIndex]->getKey() == key)
@@ -122,7 +122,7 @@ public:
 				arr[hashIndex] = tmp;
 				FLAG = 1;
 			}
-			
+
 			hashIndex++;
 			cur_DFB++;
 		}
@@ -147,7 +147,7 @@ public:
 		int hashIndex = HashFunc(key);
 		int cur_DFB = 0;
 
-	
+
 		while (arr[hashIndex]->getDFB() >= cur_DFB)
 		{
 			if (arr[hashIndex]->getKey() == key)
@@ -193,41 +193,6 @@ public:
 
 int main()
 {
-	/*
-		Пример 1.
-		Создадим объект класса на 10 элементов(=> size = 10, capacity = 20).
-		Добавим пять элементов.
-
-		Элемент		Код по ASCII	Код % capacity (- это соотвественно номер элемента в массиве arr)
-		P			80					0
-		Q			81					1
-		d			100					0
-		e			101					1
-		x			120					0
-		
-		По очереди добавления должно вывестись:
-		P       value1   [0]
-		d       value3   [1]
-		x       value5   [2]
-		e       value4   [2]
-		Q       value2   [3]
-		-       -        [-1] * 15(это строчка 15 раз)
-
-		Далее найдем value элемента с key = "x" и не найдем value элементов с key = "T", "(".
-		Элемент		Код по ASCII	Код % capacity
-		T       84      4
-		(       40      0
-		(ищем и не находим два элемента, так как поиск по ним немного различается)
-
-		Далее попробуем удалить несуществующий элемент в таблицу arr - "T", а затем удалим существующий.
-		После удаления таблица должна измениться и стать:
-		P       value1   [0]
-		d       value3   [1]
-		e       value4   [1]
-		Q       value2   [2]
-		-       -        [-1] * 16 (эта строчка 16 раз)
-
-	*/
 	cout << "=======================Example 1=======================" << endl;
 
 	HashTable Tab1(10);
@@ -251,36 +216,7 @@ int main()
 	cout << endl;
 	Tab1.showHashTable();
 
-
 	cout << endl << endl;
-	/*
-		Пример 2.
-		Попробуем добавить элемент в таблицу, в которой при добавление size станет больше capacity.
-		Создадим объект класса на 1 элементов(=> size = 1, capacity = 2).
-
-		Элемент		Код по ASCII	Код % capacity
-		P			80					0
-		Q			81					1
-
-		Элементы "P" и "Q" спокойно добавляются, хэш-таблица должна выглядеть так:
-		P       value1   [0]
-		Q       value2   [0]
-		
-		На "b" место не хватает, поэтому начинает свою работу метод IncreaseCapacity() и хэш-таблица изменяется
-		Теперь: size = 3, capacity = 6
-					Элемент		Код по ASCII	Код % capacity
-						P			80					2
-						Q			81					3
-						b			98					2
-
-		Хэш-таблица должна выглядеть так:
-		-       -        [-1]
-		-       -        [-1]
-		P       value1   [0]
-		b       value3   [1]
-		Q       value2   [1]
-		-       -        [-1]
-	*/
 	cout << "=======================Example 2=======================" << endl;
 
 	HashTable Tab2(1);
