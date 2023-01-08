@@ -25,17 +25,17 @@ Data item class **HashNode**:
 
 Main class **HashTable**:
    1. Consists of:
-      * variable arr - array of pointers to objects of class HashNode;
+      * variable arr - an array of pointers to objects of class HashNode;
       * variable size - current number of elements in "arr" - by default 0;
-      * variable capacity - maximum possible number of elements in "arr" - by default 0, always twice as big as the variable "size".
+      * variable capacity - the maximum possible number of elements in "arr" - by default 0, always twice as big as the variable "size".
    2. For the HashTable class, the following have been implemented:
       * constructor with the parameter "size", which defines the variable "capacity";
       * method insertNode() - to add an element to the hash table;
-      * method IncreaseCapacity() - to increase the variable "capacity", is used in the insertNode() method if variable "size" becomes larger than the "capacity";
+      * method IncreaseCapacity() - to increase the variable "capacity", is used in the insertNode() method if the variable "size" becomes larger than the "capacity";
       * method deleteNode() - to remove an element from the hash table;
       * method getValue() - to get the value from the key;
       * method HashFunc() - for key coding;  
-        This method converts the string "key" character by character to the integer value according to the ASCII table, takes the sum of the received values and takes the value modulo "capacity".
+        This method converts the string "key" character by character to the integer value according to the ASCII table, takes the sum of the received values, and takes the value modulo "capacity".
       * method showHashTable() - to output the hash table;
       * method getCapacity() - to get the value of the variable "capacity";
       * method getSize() -  to get the value of the variable "size";
