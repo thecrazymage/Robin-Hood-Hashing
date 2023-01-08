@@ -45,7 +45,7 @@ Main class **HashTable**:
 
 ### Example 1 ###
 
-Let's create a class object for 10 elements($\Rightarrow$ size = 10, capacity = 20) and add 5 elements.
+Let's create a class object for 10 elements (then size = 10, capacity = 20) and add 5 elements.
 | Element | ASCII code | Code % capacity (this is the number of the element in the array "arr", respectively) |
 |:-------:|:----------:|:------------------------------------------------------------------------------------:|
 |    P    |     80     |                                           0                                          |
@@ -86,14 +86,14 @@ After deletion, the table should change and become:
 
 ### Example 2 ###
 
-Let's try to add an element to the table, in which when the element is added, "size" will become larger than "capacity".
-Let's create a class object for 1 element($\Rightarrow$ size = 1, capacity = 2)
+Let's try to add an element to the table, where, when the element is added, "size" will become larger than "capacity".
+Let's create a class object for 1 element (then size = 1, capacity = 2)
 | Element | ASCII code | Code % capacity |
 |:-------:|:----------:|:---------------:|
 |    P    |     80     |        0        |
 |    Q    |     81     |        1        |
 
-Elements "P" and "Q" are safely added, the hash table should look like this:
+Once elements "P" and "Q" are safely added, the hash table should look like this:
 | key |  value |  DFB  |
 |:---:|:------:|:-----:|
 |  P  | value1 | \[0\] |
